@@ -681,6 +681,13 @@ static class Tests
         Equal("en", Languages.FromSystem("en-GB"), "system en");
         Equal("Simplified Chinese", Languages.EnglishName("zh-CN"), "english name");
         Equal("Japanese", Languages.EnglishName("ja"), "english name ja");
+        // Vietnamese target: offered, named in prompts, Latin script with its tone marks.
+        Equal("Tiếng Việt", Languages.Targets.Single(t => t.Code == "vi").Name, "vi offered");
+        Equal("Vietnamese", Languages.EnglishName("vi"), "english name vi");
+        Check(Languages.InScript("Chúng ta cùng xem lại lịch ra mắt sản phẩm.", "vi"), "vi in script");
+        Check(!Languages.InScript("我们来看一下上线时间表", "vi"), "Chinese is not Vietnamese");
+        Check(Languages.WrittenIn("Tóm tắt: nhóm thống nhất lịch ra mắt vào thứ Tư.", "Vietnamese"), "vi notes");
+        Check(!Languages.WrittenIn("总结：团队确定周三上线。", "Vietnamese"), "Chinese notes are not Vietnamese");
         Equal("01:05", Languages.Clock(65.9), "clock"); Equal("1:00:01", Languages.Clock(3601), "clock hours");
     }
 

@@ -59,6 +59,7 @@ public static class Languages
     [
         new("简体中文", "zh-CN"), new("繁體中文", "zh-TW"), new("English", "en"), new("日本語", "ja"),
         new("한국어", "ko"), new("Español", "es"), new("Français", "fr"), new("Deutsch", "de"), new("Português", "pt"),
+        new("Tiếng Việt", "vi"),
     ];
 
     /// "Simplified Chinese", "Japanese": the names prompts use.
@@ -66,6 +67,8 @@ public static class Languages
     {
         "zh-CN" => "Simplified Chinese",
         "zh-TW" => "Traditional Chinese",
+        // Spelled out so prompts never depend on the machine's culture data.
+        "vi" => "Vietnamese",
         _ => TryCulture(code)?.EnglishName ?? code,
     };
 

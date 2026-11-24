@@ -83,6 +83,7 @@ public static class VoiceCatalog
         "fr" => "Merci à tous. Regardons ensemble le calendrier de lancement.",
         "de" => "Danke an alle. Schauen wir uns den Zeitplan für den Start an.",
         "pt" => "Obrigado a todos. Vamos ver o cronograma de lançamento.",
+        "vi" => "Cảm ơn mọi người. Chúng ta cùng xem lại lịch ra mắt sản phẩm.",
         _ => "Thanks everyone. Let's look at the launch timeline and decide who owns the microphone tests.",
     };
 }
